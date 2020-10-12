@@ -1,10 +1,10 @@
 import React from "react";
-import { Box, Heading, Flex, Text, Button, Link } from "@chakra-ui/core";
+import { Box, Heading, Flex, Text, Link } from "@chakra-ui/core";
 import { Link as RouterLink } from "@reach/router";
 
-const MenuItems = ({ children }: { children: React.ReactNode }) => (
+const MenuItem = ({ children }: { children: React.ReactNode }) => (
   <Text mt={{ base: 4, md: 0 }} mr={6} display="block">
-    <Link>{children}</Link>
+    <Link as="span">{children}</Link>
   </Text>
 );
 
@@ -31,18 +31,15 @@ const Header = (props: React.ComponentPropsWithoutRef<"nav">) => {
         alignItems="center"
         flexGrow={1}
       >
-        <MenuItems>
+        <MenuItem>
           <RouterLink to="/">Home</RouterLink>
-        </MenuItems>
-        <MenuItems>
-          <RouterLink to="dashboard">Dashboard</RouterLink>
-        </MenuItems>
+        </MenuItem>
       </Box>
 
       <Box display={{ sm: "block", md: "block" }} mt={{ base: 4, md: 0 }}>
-        <Button bg="transparent" border="1px">
-          Sign Up
-        </Button>
+        <RouterLink to="signin">
+          <Link as="span">Sign In</Link>
+        </RouterLink>
       </Box>
     </Flex>
   );
