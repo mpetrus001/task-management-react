@@ -3,11 +3,17 @@ import { Admin, Resource } from "react-admin";
 import restProvider from "ra-data-simple-rest";
 import TaskList from "./components/TaskList";
 import TaskCreate from "./components/TaskCreate";
+import TaskEdit from "./components/TaskEdit";
 
 function App() {
   return (
     <Admin dataProvider={restProvider("http://localhost:3000")}>
-      <Resource name="tasks" list={TaskList} create={TaskCreate} />
+      <Resource
+        name="tasks"
+        list={TaskList}
+        create={TaskCreate}
+        edit={TaskEdit}
+      />
     </Admin>
   );
 }

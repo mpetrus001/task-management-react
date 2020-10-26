@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Manually Created",
       "description": "a task created for testing",
-      "status": "OPEN",
+      "status": "DONE",
       "userId": 1
     },
     {
