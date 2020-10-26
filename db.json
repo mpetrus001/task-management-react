@@ -1,0 +1,32 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Manually Created",
+      "description": "a task created for testing",
+      "status": "OPEN",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "title": "Another Manual Task",
+      "description": "a task created for testing",
+      "status": "IN_PROGRESS",
+      "userId": 1
+    },
+    {
+      "title": "New Task",
+      "description": "Created with react-admin",
+      "userId": 1,
+      "status": "OPEN",
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "sophie@computer.local",
+      "password": "Walkm3Please"
+    }
+  ]
+}
