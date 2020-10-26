@@ -15,7 +15,6 @@ const TaskList = (props) => {
         <TextField source="title" />
         <TextField source="description" />
         <TextField source="status" />
-        <TextField source="userId" />
         <EditButton basePath="/tasks" />
         <DeleteButton basePath="/tasks" />
       </Datagrid>
