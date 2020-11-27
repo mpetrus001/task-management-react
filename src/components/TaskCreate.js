@@ -4,7 +4,7 @@ import { Create, SimpleForm, TextInput } from "react-admin";
 const TaskCreate = (props) => {
   return (
     <Create {...props}>
-      <SimpleForm>
+      <SimpleForm redirect="list">
         <TextInput source="title" />
         <TextInput source="description" />
       </SimpleForm>
