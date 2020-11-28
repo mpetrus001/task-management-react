@@ -1,16 +1,11 @@
-const AuthProvider = {
-  login,
-  logout,
-  checkAuth,
-  checkError,
-  getPermissions: (params) => Promise.resolve(),
-  getIdentity: () => Promise.resolve(),
-};
+import { config } from "dotenv";
 
-export default AuthProvider;
+config();
+const apiHost = process.env.API_HOST || "localhost";
+const apiPort = process.env.API_PORT || "3030";
 
 function login({ username, password }) {
-  const request = new Request("http://localhost:3000/auth/signin", {
+  const request = new Request(`http://${apiHost}:${apiPort}/auth/signin`, {
     method: "POST",
     body: JSON.stringify({ email: username, password }),
     headers: new Headers({ "Content-Type": "application/json" }),
@@ -44,3 +39,14 @@ function checkError(error) {
   }
   return Promise.resolve();
 }
+
+const AuthProvider = {
+  login,
+  logout,
+  checkAuth,
+  checkError,
+  getPermissions: (params) => Promise.resolve(),
+  getIdentity: () => Promise.resolve(),
+};
+
+export default AuthProvider;
