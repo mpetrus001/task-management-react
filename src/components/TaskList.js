@@ -3,6 +3,7 @@ import {
   List,
   Datagrid,
   TextField,
+  FunctionField,
   EditButton,
   DeleteButton,
 } from "react-admin";
@@ -14,7 +15,12 @@ const TaskList = (props) => {
         <TextField source="id" />
         <TextField source="title" />
         <TextField source="description" />
-        <StatusField source="status" />
+        <FunctionField
+          source="status"
+          render={(record) =>
+            `${statusFormatMap[record.status] ?? record.status}`
+          }
+        />
         <EditButton basePath="/tasks" />
         <DeleteButton basePath="/tasks" />
       </Datagrid>
@@ -24,12 +30,8 @@ const TaskList = (props) => {
 
 export default TaskList;
 
-const StatusField = ({ record = {} }) => {
-  const statusFormatMap = {
-    OPEN: "Open",
-    IN_PROGRESS: "In Progress",
-    DONE: "Done",
-  };
-  // display the raw prop in case the status hasn't been mapped to a format
-  return <span>{statusFormatMap[record.status] ?? record.status}</span>;
+const statusFormatMap = {
+  OPEN: "Open",
+  IN_PROGRESS: "In Progress",
+  DONE: "Done",
 };
