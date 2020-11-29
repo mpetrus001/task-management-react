@@ -1,11 +1,10 @@
-import { config } from "dotenv";
-
-config();
-const apiHost = process.env.API_HOST || "localhost";
-const apiPort = process.env.API_PORT || "3030";
+let apiHost =
+  process.env.REACT_APP_API_HOST === undefined
+    ? "http://localhost:3030"
+    : process.env.REACT_APP_API_HOST;
 
 function login({ username, password }) {
-  const request = new Request(`http://${apiHost}:${apiPort}/auth/signin`, {
+  const request = new Request(`${apiHost}/auth/signin`, {
     method: "POST",
     body: JSON.stringify({ email: username, password }),
     headers: new Headers({ "Content-Type": "application/json" }),

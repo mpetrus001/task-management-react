@@ -1,4 +1,3 @@
-import { config } from "dotenv";
 import "./App.css";
 import { fetchUtils, Admin, Resource } from "react-admin";
 import restProvider from "ra-data-simple-rest";
@@ -7,9 +6,10 @@ import TaskList from "./components/TaskList";
 import TaskCreate from "./components/TaskCreate";
 import TaskEdit from "./components/TaskEdit";
 
-config();
-const apiHost = process.env.API_HOST || "localhost";
-const apiPort = process.env.API_PORT || "3030";
+let apiHost =
+  process.env.REACT_APP_API_HOST === undefined
+    ? "http://localhost:3030"
+    : process.env.REACT_APP_API_HOST;
 
 const httpClient = (url, options = {}) => {
   if (!options.headers) {
@@ -28,7 +28,7 @@ function App() {
   return (
     <Admin
       authProvider={AuthProvider}
-      dataProvider={restProvider(`http://${apiHost}:${apiPort}`, httpClient)}
+      dataProvider={restProvider(apiHost, httpClient)}
     >
       <Resource
         name="tasks"
