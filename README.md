@@ -76,7 +76,7 @@ $ npm start
 
 ## Version History
 
-- See [commit change]() or See [release history]()
+- See [commit change](https://github.com/mpetrus001/task-management-react/commits/main) or See [release history](https://github.com/mpetrus001/task-management-react/releases)
 
 ## License
 
