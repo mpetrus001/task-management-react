@@ -12,7 +12,6 @@ const TaskList = (props) => {
   return (
     <List {...props}>
       <Datagrid>
-        <TextField source="id" />
         <TextField source="title" />
         <TextField source="description" />
         <FunctionField
