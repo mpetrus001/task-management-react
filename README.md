@@ -10,8 +10,6 @@ This frontend SPA using React is a work in progress.
 
 The REST API is a Node app written using the NestJS server platform. See [Task-Management-NestJS](https://github.com/mpetrus001/task-management-nestjs) for more details.
 
-![List View Screenshot](public/TM_List View.png)
-
 ## Getting Started
 
 ### Dependencies
